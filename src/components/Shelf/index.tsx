@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "react-elastic-carousel";
+import ReactStars from "react-rating-stars-component";
+
 // import { CartContext } from "../../contexts/CartContext";
 
 import Flag from "../../assets/icons/flag.svg";
@@ -34,6 +36,7 @@ const Shelf = ({ productList }: IProducts) => {
 	const products = [...productList];
 	const [cart, setCart] = useState<Product[]>([]);
 	// const [cartItems, setCartItems] = useContext(CartContext);
+	const [rating, setRating] = useState<number>();
 
 	const formatValue = (value: number) => {
 		let newValue = `${value}`;
@@ -50,6 +53,10 @@ const Shelf = ({ productList }: IProducts) => {
 		setCart(itemsOncart);
 		// setCartItems(itemsOncart);
 		localStorage.setItem(`cart`, JSON.stringify(itemsOncart));
+	};
+
+	const ratingChanged = (newRating: number) => {
+		setRating(newRating);
 	};
 
 	return (
@@ -88,7 +95,14 @@ const Shelf = ({ productList }: IProducts) => {
 										{product.productName}
 									</h2>
 									<div className="shelf--product__rating">
-										{product.stars}
+										<ReactStars
+											count={5}
+											value={rating || product.stars}
+											onChange={ratingChanged}
+											size={24}
+											isHalf={true}
+											activeColor="#F8475F"
+										/>
 									</div>
 									<div className="shelf--product__list-price">
 										<span>
