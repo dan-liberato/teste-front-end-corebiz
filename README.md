@@ -3,7 +3,7 @@
 # Teste Front-end para a CoreBiz
 
 O Teste proposto foi desenvolver a página inicial de um e-commerce utilizando
-HTML, CSS, JS - React e consomir uma API fornecida pela CoreBiz, para exibir produtos
+HTML, CSS, JS - React e consumir uma API fornecida pela CoreBiz, para exibir produtos
 e também para realizar cadastro de leads.
 
 Como um dos requisitos era Automação de Tarefas, não usei o create-react-app, instalei
