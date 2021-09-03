@@ -1,0 +1,125 @@
+.container__shelf {
+	display: flex;
+	padding: 1rem 7px;
+	margin-bottom: 69px;
+}
+
+.shelf {
+	width: 100%;
+	max-width: 1248px;
+	height: 407px;
+	margin: auto;
+}
+
+.shelf__title {
+	margin-left: 10px;
+}
+
+.shelf__title::after {
+	background: #c0c0c0;
+}
+
+.shelf__content {
+	margin-top: 20px;
+}
+
+.shelf--product {
+	width: 151.81px;
+	height: 285.66px;
+}
+
+.shelf--product__header {
+	position: relative;
+}
+
+.shelf--product__footer {
+	margin: 10px 0;
+}
+
+.shelf--product__image {
+	width: 100%;
+}
+
+.shelf--product__flag {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.shelf--product__title {
+	font-size: 10px;
+	color: #7a7a7a;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/* .shelf--product__ratin {
+
+} */
+
+.shelf--product__price {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.shelf--product__list-price {
+	height: 21px;
+	margin-top: 23px;
+}
+
+.shelf--product__list-price span {
+	font-size: 11px;
+	text-decoration: line-through;
+}
+
+.shelf--product__price span:first-child {
+	margin-right: 5px;
+}
+
+.shelf--product__installments {
+	display: block;
+	height: 15px;
+	font-size: 11px;
+	color: #7a7a7a;
+	margin: 4px 0 8px 0;
+}
+
+.shelf--active {
+	background: #e6e8ea;
+	padding: 5px 0;
+}
+
+@media (min-width: 32.5rem) {
+	.shelf__title {
+		margin-left: 30px;
+	}
+}
+
+@media (min-width: 64rem) {
+	.shelf__title {
+		font-size: 1.25rem;
+	}
+
+	.shelf__title {
+		margin-left: 60px;
+	}
+
+	.shelf__title::after {
+		width: 65px;
+	}
+
+	.shelf--product {
+		width: 216px;
+		height: 353px;
+	}
+
+	.shelf--product__title,
+	.shelf--product__installments .shelf--product__list-price span {
+		font-size: 12px;
+	}
+
+	.shelf--product__price {
+		font-size: 18px;
+	}
+}
