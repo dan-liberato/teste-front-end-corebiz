@@ -21,6 +21,11 @@ $ npm install   ou   yarn install
 $ npm run start   ou   yarn start
 ```
 
+### Build
+```bash
+$ npm run build   ou   yarn build
+```
+
 #### Para executar o Eslint:
 ```bash
 $ npm run eslint   ou   yarn eslint
