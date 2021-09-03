@@ -98,7 +98,7 @@ button {
 	margin: 0;
 }
 .rec .rec-item-wrapper {
-	height: 288px;
+	height: 380px;
 }
 .rec .rec-arrow {
 	background-color: transparent;
@@ -119,7 +119,7 @@ button {
 	background: transparent;
 }
 .rec .rec-carousel-item div {
-	padding: 0 10px;
+	padding: 0 6px;
 }
 .rec .rec-carousel-item img {
 	margin-right: 10px;
@@ -148,8 +148,5 @@ button {
 @media (min-width: 64rem) {
 	.rec .rec-arrow  {
 		display: block;
-	}
-	.rec.rec-item-wrapper {
-		height: 381px;
 	}
 }
