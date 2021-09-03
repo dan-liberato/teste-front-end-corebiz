@@ -5,12 +5,20 @@ import Layout from "../../components/Layout";
 import Slider from "../../components/Slider";
 import Shelf from "../../components/Shelf";
 import Newsletter from "../../components/Newsletter";
+import Loader from "../../components/Loader";
 
 const Home = () => {
 	const [products, setProducts] = useState<[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const getProducts = async () => {
-		await api.get("products").then((res) => setProducts(res.data));
+		try {
+			setIsLoading(true);
+			await api.get("products").then((res) => setProducts(res.data));
+			setIsLoading(false);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	useEffect(() => {
@@ -20,7 +28,8 @@ const Home = () => {
 	return (
 		<Layout>
 			<Slider />
-			<Shelf productList={products} />
+			{isLoading && <Loader />}
+			{!isLoading && <Shelf productList={products} />}
 			<Newsletter />
 		</Layout>
 	);
