@@ -44,7 +44,7 @@ module.exports = {
         new CleanWebpackPlugin(),
     ],
     devServer: {
-        port: 5000,
+        port: 5001,
         compress: true,
         liveReload: true,
         open: true,
