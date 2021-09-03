@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Carousel from "react-elastic-carousel";
-import { useCart } from "../../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 
 import Flag from "../../assets/icons/flag.svg";
 import "./styles.css";
@@ -33,7 +33,7 @@ const Shelf = ({ productList }: IProducts) => {
 	];
 	const products = [...productList];
 	const [cart, setCart] = useState<Product[]>([]);
-	const cartItems = useCart();
+	const [cartItems, setCartItems] = useContext(CartContext);
 
 	const formatValue = (value: number) => {
 		let newValue = `${value}`;
@@ -44,10 +44,11 @@ const Shelf = ({ productList }: IProducts) => {
 	};
 
 	const handleAddToCart = (index: number) => {
-		const itemsOnCart = [...cart, cart.push(products[index])];
-		setCart(itemsOnCart);
-		setCartItems(itemsOnCart);
-		console.log(cartItems);
+		const itemsOncart: any = [...cart, cart.push(products[index])];
+
+		setCart(itemsOncart);
+		setCartItems(itemsOncart);
+		localStorage.setItem(`cart`, JSON.stringify(cartItems));
 	};
 
 	return (
