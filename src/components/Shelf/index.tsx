@@ -38,7 +38,7 @@ const Shelf = ({ productList }: IProducts) => {
 	// const [cartItems, setCartItems] = useContext(CartContext);
 	const [rating, setRating] = useState<number>();
 
-	const formatValue = (price: string) => price.replace(/([0-9]{2})$/g, ",$1");
+	const formatPrice = (price: string) => price.replace(/([0-9]{2})$/g, ",$1");
 
 	const handleAddToCart = (index: number) => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -101,7 +101,7 @@ const Shelf = ({ productList }: IProducts) => {
 									<div className="shelf--product__list-price">
 										<span>
 											{product.listPrice &&
-												`de R$	${formatValue(
+												`de R$	${formatPrice(
 													String(product.listPrice)
 												)}`}
 										</span>
@@ -110,7 +110,7 @@ const Shelf = ({ productList }: IProducts) => {
 										<span>por</span>
 										<span>
 											R${" "}
-											{formatValue(String(product.price))}
+											{formatPrice(String(product.price))}
 										</span>
 									</div>
 									<div className="shelf--product__installments">
@@ -118,7 +118,7 @@ const Shelf = ({ productList }: IProducts) => {
 											product.installments.map(
 												(item) =>
 													` ou em 9x de R$
-											${formatValue(String(item.value))}`
+											${formatPrice(String(item.value))}`
 											)}
 									</div>
 									<button
