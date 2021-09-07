@@ -45,6 +45,7 @@ const Shelf = ({ productList }: IProducts) => {
 		const itemsOncart: any = [...cart, cart.push(products[index])];
 
 		setCart(itemsOncart);
+		console.log(itemsOncart);
 		// setCartItems(itemsOncart);
 		localStorage.setItem(`cart`, JSON.stringify(itemsOncart));
 	};
@@ -67,67 +68,61 @@ const Shelf = ({ productList }: IProducts) => {
 						{products.map((product, index: number) => (
 							<article
 								key={Number(index)}
-								className="shelf--product"
+								className="shelf--product flexColCenter"
 							>
-								<div className="shelf--product__header flexColCenter">
+								<img
+									className="shelf--product__image"
+									src={product.imageUrl}
+									alt={product.productName}
+								/>
+								{product.listPrice && (
 									<img
-										className="shelf--product__image"
-										src={product.imageUrl}
-										alt={product.productName}
+										className="shelf--product__flag"
+										src={Flag}
+										alt="Off"
 									/>
-									{product.listPrice && (
-										<img
-											className="shelf--product__flag"
-											src={Flag}
-											alt="Off"
-										/>
-									)}
+								)}
+								<h2 className="shelf--product__title">
+									{product.productName}
+								</h2>
+								<div className="shelf--product__rating">
+									<ReactStars
+										count={5}
+										value={rating || product.stars}
+										onChange={ratingChanged}
+										size={24}
+										isHalf={true}
+										activeColor="#F8475F"
+									/>
 								</div>
-
-								<div className="shelf--product__footer flexColCenter">
-									<h2 className="shelf--product__title">
-										{product.productName}
-									</h2>
-									<div className="shelf--product__rating">
-										<ReactStars
-											count={5}
-											value={rating || product.stars}
-											onChange={ratingChanged}
-											size={24}
-											isHalf={true}
-											activeColor="#F8475F"
-										/>
-									</div>
-									<div className="shelf--product__list-price">
-										<span>
-											{product.listPrice &&
-												`de R$	${formatPrice(
-													String(product.listPrice)
-												)}`}
-										</span>
-									</div>
-									<div className="shelf--product__price">
-										<span>por</span>
-										<span>
-											R${" "}
-											{formatPrice(String(product.price))}
-										</span>
-									</div>
-									<div className="shelf--product__installments">
-										{product.installments &&
-											product.installments.map(
-												(item) =>
-													` ou em 9x de R$
+								<div className="shelf--product__list-price">
+									<span>
+										{product.listPrice &&
+											`de R$	${formatPrice(
+												String(product.listPrice)
+											)}`}
+									</span>
+								</div>
+								<div className="shelf--product__price">
+									<span>por</span>
+									<span>
+										R$ {formatPrice(String(product.price))}
+									</span>
+								</div>
+								<div className="shelf--product__installments">
+									{product.installments &&
+										product.installments.map(
+											(item) =>
+												` ou em 9x de R$
 											${formatPrice(String(item.value))}`
-											)}
-									</div>
-									<button
-										onClick={() => handleAddToCart(index)}
-										className="btn-primary add-to-cart"
-									>
-										Comprar
-									</button>
+										)}
 								</div>
+								<button
+									onClick={() => handleAddToCart(index)}
+									className="btn-primary add-to-cart"
+								>
+									Comprar
+								</button>
 							</article>
 						))}
 					</Carousel>
