@@ -38,13 +38,7 @@ const Shelf = ({ productList }: IProducts) => {
 	// const [cartItems, setCartItems] = useContext(CartContext);
 	const [rating, setRating] = useState<number>();
 
-	const formatValue = (value: number) => {
-		let newValue = `${value}`;
-		newValue = newValue.replace(/([0-9]{2})$/g, ",$1");
-		if (newValue.length > 6)
-			newValue = newValue.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-		return newValue;
-	};
+	const formatValue = (price: string) => price.replace(/([0-9]{2})$/g, ",$1");
 
 	const handleAddToCart = (index: number) => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -108,14 +102,15 @@ const Shelf = ({ productList }: IProducts) => {
 										<span>
 											{product.listPrice &&
 												`de R$	${formatValue(
-													product.listPrice
+													String(product.listPrice)
 												)}`}
 										</span>
 									</div>
 									<div className="shelf--product__price">
 										<span>por</span>
 										<span>
-											R$ {formatValue(product.price)}
+											R${" "}
+											{formatValue(String(product.price))}
 										</span>
 									</div>
 									<div className="shelf--product__installments">
@@ -123,7 +118,7 @@ const Shelf = ({ productList }: IProducts) => {
 											product.installments.map(
 												(item) =>
 													` ou em 9x de R$
-											${formatValue(item.value)}`
+											${formatValue(String(item.value))}`
 											)}
 									</div>
 									<button
