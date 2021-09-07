@@ -67,7 +67,7 @@ button {
 .flexColCenter {
 	display: flex;
 	flex-flow: column;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 }
 
@@ -97,9 +97,9 @@ button {
 .rec .rec-slider-container {
 	margin: 0;
 }
-.rec .rec-item-wrapper {
+/* .rec .rec-item-wrapper {
 	height: 380px;
-}
+} */
 .rec .rec-arrow {
 	background-color: transparent;
 	border: none;
