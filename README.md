@@ -28,12 +28,12 @@ $ npm run build   ou   yarn build
 
 #### Para executar o Eslint:
 ```bash
-$ npm run eslint   ou   yarn lint
+$ npm run lint   ou   yarn lint
 ```
 
 #### Para executar o Prettier:
 ```bash
-$ npm run prettier  ou   yarn format
+$ npm run format   ou   yarn format
 ```
 <div style="**display**: inline_block"><br>
     <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"/>
