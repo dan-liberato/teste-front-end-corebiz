@@ -2,9 +2,9 @@
 	--fontNunito: "Nunito", sans-serif;
 	--fontUbuntu: "Ubuntu", sans-serif;
 	--fontLato: "Lato", sans-serif;
-	--smallTextSize1: 0.625rem /* 12px */
-	--smallTextSize2: 0.813rem; /* 13px */
-	--active-color:#F8475F;
+	--smallTextSize1: 0.625rem;
+	--smallTextSize2: 0.813rem;
+	--active-color: #f8475f;
 }
 
 * {
@@ -81,11 +81,10 @@ button {
 	border-radius: 5px;
 }
 .btn-secondary {
-	background: #FFF;
+	background: #fff;
 	color: #000;
 	border-radius: 5px;
 }
-
 
 .add-to-cart {
 	width: 125.28px;
@@ -97,9 +96,6 @@ button {
 .rec .rec-slider-container {
 	margin: 0;
 }
-/* .rec .rec-item-wrapper {
-	height: 380px;
-} */
 .rec .rec-arrow {
 	background-color: transparent;
 	border: none;
@@ -128,7 +124,7 @@ button {
 	max-width: 100%;
 }
 .rec .rec-dot,
-.rec .rec-dot_active  {
+.rec .rec-dot_active {
 	background: #bdbdbd;
 	border: none;
 	box-shadow: none;
@@ -140,13 +136,13 @@ button {
 	background: var(--active-color);
 }
 
-.rec .rec-dot:hover, .rec .rec-dotjJKuoL:focus {
+.rec .rec-dot:hover,
+.rec .rec-dotjJKuoL:focus {
 	box-shadow: none;
 }
 
-
 @media (min-width: 64rem) {
-	.rec .rec-arrow  {
+	.rec .rec-arrow {
 		display: block;
 	}
 }
