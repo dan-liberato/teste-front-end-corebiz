@@ -1,7 +1,7 @@
 {
 	"name": "front-end-test",
 	"version": "1.0.0",
-	"description": "This project was created for a front-end challenge",
+	"description": "This project was created for a front-end test",
 	"main": "src/index.tsx",
 	"scripts": {
 		"start": "webpack serve --config webpack.config.js --env env=development",
